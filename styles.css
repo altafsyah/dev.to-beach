@@ -53,18 +53,22 @@ main section:nth-child(1) h2 {
 }
 
 main section:nth-child(1) p {
-  margin-top: 200px;
   font-size: 1.5rem;
   color: white;
 }
 
-#hero h2 {
-  font-size: 1.5rem;
+main section:nth-child(2) {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  background-color: #3498db;
+  border-radius: var(--border-radius);
+  text-align: center;
 }
 
-#hero p {
-  font-size: 1rem;
-  margin-top: 0.5rem;
+main section:nth-child(2) h2 {
+  font-size: 2.5rem;
+  color: white;
 }
 
 ul {
@@ -83,6 +87,11 @@ ul {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .beach__card::before {
@@ -96,7 +105,7 @@ ul {
   top: -8%;
   right: -8%;
   z-index: 1;
-  animation: sun__pulse 3s infinite;
+  animation: pulse 3s infinite;
 }
 
 .beach__card:nth-child(even)::before {
@@ -113,7 +122,7 @@ ul {
 }
 
 /* Beach Goes Hereeeee */
-#pink__sand {
+.sand {
   width: 80%;
   position: absolute;
   /* bottom: -50%; */
@@ -123,7 +132,18 @@ ul {
   transition-duration: 300ms;
 }
 
-@keyframes sun__pulse {
+.sea {
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  z-index: 0;
+  transition: all;
+  transition-duration: 300ms;
+  animation: wave 1.5s infinite;
+}
+
+@keyframes pulse {
   0% {
     transform: scale(1);
   }
@@ -132,5 +152,17 @@ ul {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
